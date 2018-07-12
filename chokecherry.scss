@@ -1,28 +1,32 @@
+$color: green;
+
+li {
+
+  border-bottom-color: $color;
+}
+
 %littleTemplate {
-
-
-}
-
-%bigTemplate {
-
-
-}
-
-@media(max-width: 400px)
-{
-  body {
-      background-color: grey;
-
+  body li,
+  body p {
+    background-color: red;
   }
-
 }
 
-@media(min-width: 401px)
-{
-
-
+%mediumTemplate {
+  body li,
+  body p {
+    background-color: blue;
+  }
 }
-nav ul li{
+@media(max-width: 400px) {
+  body {
+    @extend %littleTemplate;
+  }
+}
+@media(max-width: 600px) {
+/*  @extend %mediumTemplate; */
+}
+
+nav ul li {
   display: inline;
-
 }
